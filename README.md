@@ -71,6 +71,14 @@
 
 - rosatom_map.sql
 
+- README.md
+
+- REQUIREMENTS.md
+
+- MAP_EDITING.md
+
+- rosatom_map.sql
+
 ---
 
 ## Требования и зависимости
