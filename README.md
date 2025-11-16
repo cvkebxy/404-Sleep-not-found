@@ -38,6 +38,7 @@
   - animations.js
   - api.js
   - cards-management.js
+  - counters.js
   - dropdowns.js
   - forms.js
   - main.js
@@ -61,6 +62,10 @@
   - save_profile.php
 
 - styles/…
+  
+- uploads/
+  - logos/
+    - nko_3_1763291137.png
 
 - index.php
 
