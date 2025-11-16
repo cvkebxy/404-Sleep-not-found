@@ -26,12 +26,9 @@
 
 - admin/
   - admin_panel.php
-
 - data/
   - nko.csv
-
 - img/
-
 - js/
   - accessibility.js
   - admin-panel.js
@@ -44,7 +41,6 @@
   - main.js
   - modals.js
   - navigation.js
-
 - php/
   - admin_ajax.php
   - auth.php,
@@ -60,23 +56,15 @@
   - register.php
   - save_nko.php
   - save_profile.php
-
 - styles/…
-  
 - uploads/
   - logos/
     - nko_3_1763291137.png
-
 - index.php
-
 - rosatom_map.sql
-
 - README.md
-
 - REQUIREMENTS.md
-
 - MAP_EDITING.md
-
 - rosatom_map.sql
 
 ---
