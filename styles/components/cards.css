@@ -1,0 +1,243 @@
+/* Карточки статистики */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stat-card {
+    padding: 42px 0px 19px;
+    text-align: center;
+    min-width: 244px;
+    min-height: 189px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+    font-family: 'Nexa', sans-serif;
+}
+
+.stat-label {
+    font-size: 17px;
+    min-width:inherit;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    font-family: 'Nexa', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Карточки проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 350px;
+}
+
+.project-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Nexa', sans-serif;
+    white-space: nowrap;
+}
+
+.badge-urgent {
+    background: #FF4757;
+    color: white;
+}
+
+.badge-social {
+    background: #00D9CE;
+    color: #0047B1;
+}
+
+.badge-ecology {
+    background: #00E0A0;
+    color: #0047B1;
+}
+
+.badge-animals {
+    background: #FF9F43;
+    color: white;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-family: 'Nexa', sans-serif;
+    line-height: 1.3;
+}
+
+.project-location {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.project-description {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    margin-top: auto;
+}
+
+.project-org {
+    font-size: 14px;
+    color: #64748b;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* Сообщение об отсутствии карточек */
+.no-cards-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.no-cards-message p {
+    opacity: 0.8;
+}
+
+/* Компактная кнопка удаления */
+.delete-card-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(231, 76, 60, 0.95);
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1; /* ИЗМЕНИТЬ с 0 на 1 */
+    z-index: 10;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.delete-card-btn:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.delete-card-btn:active {
+    transform: scale(0.95);
+}
+
+/* Для доступности - всегда показывать кнопку при фокусе */
+.delete-card-btn:focus {
+    opacity: 1;
+    outline: 2px solid white;
+    outline-offset: 1px;
+}

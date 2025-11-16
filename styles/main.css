@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Main Content с вашим SVG фоном */
+.main-content {
+    background: linear-gradient(180deg, #14256D 0%, #6CACE4 100%);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Remove the old overlay */
+.main-content::before {
+    display: none;
+}
+
+/* SVG Background Line */
+.background-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.svg-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* Ensure content stays above background */
+.hero,
+.how-it-works,
+.map-section,
+.search-section,
+.projects-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Анимация для спиннера загрузки */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Стили для индикатора загрузки */
+#loadingSpinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 99;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-indicator {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

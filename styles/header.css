@@ -1,0 +1,161 @@
+/* Header с новым цветом */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #025EA1;
+    padding: 16px 0;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 150px;       /* Фиксированная ширина */
+    height: 40px;      /* Фиксированная высота */
+    object-fit: contain; /* Сохраняет пропорции */
+}
+
+.logo-text {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Nexa', sans-serif;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: #22d3ee;
+}
+
+/* Кнопка доступности в хедере */
+.accessibility-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accessibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.btn-login {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #00E0A0 0%, #23A4BE 37%, #662FE7 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 21px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-login:hover::before {
+    left: 100%;
+}
+
+/* Стили для информации о пользователе в хедере */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    color: white;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-profile-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-profile-btn:hover {
+    color: #22d3ee;
+}
+
+.nav .nko-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav .nko-btn:hover {
+    color: #22d3ee;
+}

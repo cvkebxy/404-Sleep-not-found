@@ -1,0 +1,82 @@
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.toast-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: 'Nexa', sans-serif;
+}
+
+.toast-description {
+    font-size: 14px;
+    color: #64748b;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Адаптивность для Toast уведомлений */
+@media (max-width: 768px) {
+    .toast {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        max-width: none;
+    }
+    
+    .toast-title {
+        font-size: 16px;
+    }
+    
+    .toast-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toast {
+        bottom: 12px;
+        right: 12px;
+        left: 12px;
+        padding: 12px 16px;
+    }
+    
+    .toast-title {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+    
+    .toast-description {
+        font-size: 13px;
+    }
+}
+
+/* Toast для режимов доступности */
+html.accessibility-high-contrast .toast,
+html.accessibility-dark .toast {
+    background: #2d2d2d;
+    color: white;
+    border: 2px solid white;
+}
+
+html.accessibility-high-contrast .toast-description,
+html.accessibility-dark .toast-description {
+    color: #e0e0e0;
+}
