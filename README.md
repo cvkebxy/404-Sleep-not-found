@@ -4,6 +4,8 @@
 
 Коротко: проект показывает интерактивную карту НКО на базе Яндекс Карт. Данные читаются из CSV (data/nko.csv), парсятся на клиенте через PapaParse и рендерятся через ymaps.ObjectManager с кластеризацией, фильтрами и поиском.
 
+Ссылка на презентацию: https://disk.yandex.ru/d/TuCKNaidwgmnzw
+
 ---
 
 Содержание
@@ -66,6 +68,7 @@
 - REQUIREMENTS.md
 - MAP_EDITING.md
 - rosatom_map.sql
+- 404 Sleep Not Found.pdf
 
 ---
 
