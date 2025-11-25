@@ -18,27 +18,12 @@
 
 ## Структура проекта
 
-- data/
-  - nko.csv
-- forms/
-  - 0/
-    - 0admin_panel.php
-    - profile.php
-  - 1/
-    - admin_panel.php
 - img/
+
 - js/
   - gigascript.js
   - map.js
-  - animations.js
-  - api.js
-  - cards-management.js
-  - counters.js
-  - dropdowns.js
-  - forms.js
-  - main.js
-  - modals.js
-  - navigation.js
+
 - php/
   - admin_ajax.php
   - auth.php,
@@ -50,18 +35,19 @@
   - get_cards_ajax.php
   - get_nko.php
   - get_profile.php
+  - get_project_page.php
+  - get_stats.php
   - join_project.php
   - register.php
   - save_nko.php
   - save_profile.php
-- styles/…
-- uploads/
-  - logos/
-    - nko_3_1763291137.png
-- ver2.0 js
-- ver3.0 js
+  - search_projects.php
+
+- styles/
+  - gigamain.css
+  - map.css
+
 - index.php
-- rosatom_map.sql
 - README.md
 - REQUIREMENTS.md
 - rosatom_map.sql
@@ -73,7 +59,7 @@
 ## Требования и зависимости
 - PHP 7.4+ / 8.x (используем PHP-файлы и встроенный сервер для разработки)
 - Веб-сервер (Apache/nginx) + php-fpm для продакшна
-- База MySQL/MariaDB (дамп — rosatom_map.sql)
+- База MySQL/MariaDB (дамп — rosatom_map.sql и rosatom_cities.sql)
 - Клиентские внешние библиотеки:
   - Yandex.Maps API v2.1 (подключается в index.php)
 
