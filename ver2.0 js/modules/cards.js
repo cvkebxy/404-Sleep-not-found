@@ -1,0 +1,10 @@
+(function(){
+    const Cards = {
+        init(){ console.log('Cards.init'); window.joinProject = this.joinProject.bind(this); window.deleteCard = this.deleteCard.bind(this); this.initDelegation(); },
+        initDelegation(){ document.addEventListener('click',(e)=>{ const btn=e.target.closest('.btn-help'); if(btn && !btn.disabled){ e.preventDefault(); const id=btn.getAttribute('data-card-id'); if(id) this.joinProject(parseInt(id),btn); } const del=e.target.closest('.delete-card-btn'); if(del){ e.preventDefault(); const cardEl=del.closest('.project-card'); const id=cardEl?.getAttribute('data-card-id'); if(id) this.deleteCard(id,cardEl); } }); },
+        async joinProject(cardId, buttonElement){ try{ if(!buttonElement) buttonElement=document.querySelector(`.btn-help[data-card-id="${cardId}"]`); if(buttonElement){ buttonElement.disabled=true; const orig=buttonElement.textContent; buttonElement.innerHTML='<div class="loading-spinner-small"></div> Загрузка...'; }
+                const resp = await fetch('php/join_project.php',{ method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:`card_id=${cardId}` }); const data = await resp.json(); if(data.success){ window.showToast?.('Успех', data.message||'Вы записаны'); if(buttonElement){ buttonElement.textContent='Вы участвуете'; buttonElement.disabled=true; } } else { window.showToast?.('Ошибка', data.message||'Ошибка'); if(buttonElement){ buttonElement.textContent='Помочь'; buttonElement.disabled=false; } } }catch(err){ console.error(err); window.showToast?.('Ошибка','Ошибка соединения'); } },
+        async deleteCard(cardId, cardElement){ if(!confirm('Удалить карточку?')) return; try{ const resp = await fetch('php/delete_card.php',{ method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:`card_id=${cardId}` }); const data = await resp.json(); window.showToast?.(data.status==='success'?'Успех':'Ошибка', data.message||''); if(data.status==='success' && cardElement){ cardElement.remove(); } }catch(err){ console.error(err); window.showToast?.('Ошибка','Ошибка удаления'); } }
+    };
+    window.Cards = Cards;
+})();

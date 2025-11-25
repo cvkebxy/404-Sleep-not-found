@@ -1,0 +1,1505 @@
+/* Объединенный CSS файл */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Main Content с вашим SVG фоном */
+.main-content {
+    background: linear-gradient(180deg, #14256D 0%, #6CACE4 100%);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Remove the old overlay */
+.main-content::before {
+    display: none;
+}
+
+/* SVG Background Line */
+.background-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.svg-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* Убедитесь, что содержимое остается на заднем плане */
+.hero,
+.how-it-works,
+.map-section,
+.search-section,
+.projects-section,
+.news-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 180px;
+    padding-bottom: 64px;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    gap: 48px;
+    text-align: center; 
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #025EA1;
+    padding: 16px 0;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img,
+.logo-icon img {
+    width: 150px;      
+    height: 40px;      
+    object-fit: contain;
+}
+
+.logo-text {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Nexa', sans-serif;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: #22d3ee;
+}
+
+/* Кнопка доступности в хедере */
+.accessibility-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accessibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.btn-login {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #00E0A0 0%, #23A4BE 37%, #662FE7 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 21px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-login:hover::before {
+    left: 100%;
+}
+
+/* Стили для информации о пользователе в хедере */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    color: white;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-profile-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-profile-btn:hover {
+    color: #22d3ee;
+}
+
+.nav .nko-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav .nko-btn:hover {
+    color: #22d3ee;
+}
+
+/* Footer */
+.footer {
+    background: #025EA1;
+    padding: 48px 0 14px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.footer-column {
+    color: white;
+}
+
+.footer-title {
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    flex: 1;
+}
+
+.footer-image {
+    max-width: 70px; 
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-image:hover {
+    opacity: 1;
+}
+
+.footer-accessibility-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.footer-accessibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* components.css */
+/* Основные кнопки */
+.btn-primary {
+    padding: 12px 48px;
+    background: linear-gradient(90deg, #00E0A0 0%, #23A4BE 37%, #662FE7 100%);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-size: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Nexa', sans-serif;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Nexa', sans-serif;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-text:hover {
+    color: #22d3ee;
+}
+
+.btn-help {
+    padding: 8px 24px;
+    background: linear-gradient(90deg, #00E0A0 0%, #23A4BE 37%, #662FE7 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Nexa', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.btn-help::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-help:hover::before {
+    left: 100%;
+}
+
+.btn-help:disabled {
+    background: #64748b !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Кнопки пагинации */
+.pagination-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.prev-btn, .next-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Nexa', sans-serif;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: #22d3ee;
+    border-color: #22d3ee;
+}
+
+.prev-btn:disabled, .next-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Стили для новой AJAX пагинации */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    min-width: 40px;
+}
+
+.pagination-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagination-btn.active {
+    background: linear-gradient(90deg, #00E0A0 0%, #23A4BE 37%, #662FE7 100%);
+    border-color: transparent;
+    color: white;
+    font-weight: 600;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Карточки статистики */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stat-card {
+    padding: 42px 0px 19px;
+    text-align: center;
+    min-width: 244px;
+    min-height: 189px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+    font-family: 'Nexa', sans-serif;
+}
+
+.stat-label {
+    font-size: 17px;
+    min-width:inherit;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    font-family: 'Nexa', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Карточки проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 350px;
+}
+
+.project-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Nexa', sans-serif;
+    white-space: nowrap;
+}
+
+.badge-urgent {
+    background: #FF4757;
+    color: white;
+}
+
+.badge-social {
+    background: #00D9CE;
+    color: #0047B1;
+}
+
+.badge-ecology {
+    background: #00E0A0;
+    color: #0047B1;
+}
+
+.badge-animals {
+    background: #FF9F43;
+    color: white;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-family: 'Nexa', sans-serif;
+    line-height: 1.3;
+}
+
+.project-location {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.project-description {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    margin-top: auto;
+}
+
+.project-org {
+    font-size: 14px;
+    color: #64748b;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* Компактная кнопка удаления */
+.delete-card-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(231, 76, 60, 0.95);
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+    z-index: 10;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.delete-card-btn:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.delete-card-btn:active {
+    transform: scale(0.95);
+}
+
+.delete-card-btn:focus {
+    opacity: 1;
+    outline: 2px solid white;
+    outline-offset: 1px;
+}
+
+/* Сообщение об отсутствии карточек */
+.no-cards-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.no-cards-message p {
+    opacity: 0.8;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.steps-count {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 21px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+/* Стили для карточек шагов */
+.step-card {
+    min-width: 316px;
+    min-height: 339px;
+    padding: 50px 0px 38px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    text-align: center;
+    width: 256px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: visible;
+    margin-top: 40px;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Стили для кружочков */
+.step-icon {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: #00E0A0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.step-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.step-card-content {
+    margin-top: 20px;
+}
+
+.step-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.arrow-icon {
+    font-size: 48px;
+    color: #22d3ee;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.map-container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: visible;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-card .map-container {
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.map-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 48px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: nowrap;
+    gap: 16px;
+}
+
+.map-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-badge {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Nexa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-badge.active-social {
+    background: #00D9CE;
+    color: #0047B1;
+    border-color: #00D9CE;
+}
+
+.filter-badge.active-ecology {
+    background: #00E0A0;
+    color: #0047B1;
+    border-color: #00E0A0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+}
+
+.search-input {
+    padding: 8px 16px 8px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 9999px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    height: 32px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Roboto', sans-serif;
+}
+
+.map-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 48px;
+    min-height: 500px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.russia-map {
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.map-legend {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-family: 'Nexa', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.legend-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ec4899;
+}
+
+/* Search Section */
+.search-section {
+    padding: 135px 0;
+    position: relative;
+}
+
+.search-content {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.search-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 21px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.search-form {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.search-main {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-input-large {
+    width: 100%;
+    height: 70px;
+    padding: 0 70px 0 30px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 35px;
+    color: white;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-input-large::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-input-large:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.search-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.filter-select {
+    height: 56px;
+    padding: 0 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 28px;
+    color: white;
+    backdrop-filter: blur(15px);
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.filter-select option {
+    background: #0047B1;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Стили для выпадающего списка категорий */
+.category-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.category-toggle {
+    width: 200px;
+    height: 56px;
+    padding: 0 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 28px;
+    color: white;
+    backdrop-filter: blur(15px);
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.category-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.category-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.category-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.category-item {
+    position: relative;
+    padding: 16px 20px;
+    color: #1e293b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-item:hover {
+    background: rgba(0, 71, 177, 0.1);
+}
+
+.category-item svg {
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover svg {
+    transform: translateX(3px);
+}
+
+/* Стили для подкатегорий */
+.subcategory-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.subcategory-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.subcategory-item {
+    padding: 14px 20px;
+    color: #1e293b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.subcategory-item:last-child {
+    border-bottom: none;
+}
+
+.subcategory-item:hover {
+    background: rgba(0, 71, 177, 0.1);
+    color: #0047B1;
+}
+
+/* News Section */
+.news-section {
+    background: linear-gradient(180deg, #14256D 0%, #6CACE4 100%);
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.news-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.news-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.news-section .section-title {
+    color: white;
+    font-family: 'Nexa', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-title {
+    font-family: 'Nexa', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #14256D;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    flex-grow: 1;
+}
+
+.news-date {
+    color: #6CACE4;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.news-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1;
+}
+
+.news-link {
+    color: #14256D;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+}
+
+.news-link:hover {
+    color: #6CACE4;
+}
+
+.news-footer {
+    text-align: center;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+/* Стили для AJAX пагинации в секции проектов */
+#projectsContainer {
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+/* Анимация для появления карточек при AJAX-загрузке */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Задержки для анимации карточек */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Индикатор загрузки для AJAX */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border-radius: 16px;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Индикатор загрузки для AJAX */
+.loading-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px;
+}
+
