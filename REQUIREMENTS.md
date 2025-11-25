@@ -1,4 +1,4 @@
-# Требования и зависимости — Карта НКО (Rosatom map)
+# Требования и зависимости — Карта НКО
 
 Этот файл описывает системные требования, серверные и клиентские зависимости проекта, а также примеры установки и базовые рекомендации по развёртыванию.
 
@@ -7,11 +7,10 @@
 ## Кратко
 - Сервер: PHP (>=7.4, рекоменд. 8.0+), веб-сервер (nginx или Apache), MySQL/MariaDB.
 - Клиент: Yandex.Maps API (подключается по ключу), PapaParse (CDN).
-- Не требуется сборка frontend (проект уже статический JS/CSS), однако для разработки можно использовать Node.js для инструментов (опционально).
-
+- Не требуется сборка frontend (проект уже статический JS/CSS).
 ---
 
-## Системные требования (рекомендации)
+## Системные требования
 - Операционная система: Ubuntu 20.04 / 22.04, Debian 11/12 или аналогичный Linux.
 - CPU: 1 vCPU (dev), 2+ vCPU (prod).
 - RAM: 1–2 GB (dev), 2–4+ GB (prod, при многопользовательской нагрузке).
@@ -39,7 +38,7 @@ sudo apt update
 sudo apt install -y php8.1 php8.1-fpm php8.1-mysqli php8.1-curl php8.1-mbstring php8.1-xml php8.1-gd php8.1-zip
 ```
 
-Если используете Apache:
+Если используется Apache:
 ```bash
 sudo apt install -y libapache2-mod-php8.1
 ```
@@ -73,35 +72,8 @@ SOURCE /path/to/rosatom_map.sql;
 ## Клиентские зависимости
 - Yandex.Maps JavaScript API v2.1 — подключается в index.php по URL:
   `https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ВАШ_API_КЛЮЧ`
-- PapaParse (для парсинга CSV) — подключается через CDN:
-  `https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js`
 
 Эти зависимости подключаются напрямую в HTML/PHP и не требуют npm/сборки.
-
----
-
-## Файлы конфигурации и секреты
-- Рекомендуется хранить ключ Яндекса и другие секреты вне репозитория:
-  - `php/config.example.php` — пример
-  - `php/config.php` — реальная конфигурация (в .gitignore)
-
-Пример содержимого `php/config.example.php`:
-```php
-<?php
-return [
-  'YANDEX_API_KEY' => 'ВАШ_API_КЛЮЧ_НЕ_КОММИТИТЬ',
-  'CSV_PATH' => __DIR__ . '/../data/nko.csv',
-  'MAP_CENTER' => [55.76, 37.64],
-  'MAP_ZOOM' => 4,
-];
-```
-
----
-
-## Права на файлы и папки
-- `data/nko.csv` — доступна для чтения веб-сервером (r).
-- `uploads/` или `uploads/logos/` — папка для загрузки логотипов НКО: права записи (chown www-data:www-data; chmod 750/770).
-- Никогда не давайте публичный доступ на `php/config.php`.
 
 ---
 
