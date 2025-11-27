@@ -1,4 +1,3 @@
-markdown name=README. md url=https://github.com/cvkebxy/404-Sleep-not-found/blob/main/README.md
 # 🗺️ 404: Sleep Not Found
 
 <div align="center">
