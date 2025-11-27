@@ -4,8 +4,8 @@
 
 **Интерактивная карта добрых дел и НКО**
 
-[![MIT License](https://img.shields. io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4? logo=php&logoColor=white)](https://www.php.net/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?logo=php&logoColor=white)](https://www.php.net/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
 
