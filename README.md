@@ -4,8 +4,6 @@
 
 Коротко: проект показывает интерактивную карту НКО на базе Яндекс Карт
 
-Ссылка на презентацию: https://disk.yandex.ru/d/TuCKNaidwgmnzw
-
 Ссылка на сайт: https://it-hackathon-team04.mephi.ru/
 
 ---
