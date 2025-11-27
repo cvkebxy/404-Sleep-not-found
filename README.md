@@ -50,6 +50,7 @@
 - index.php
 - README.md
 - REQUIREMENTS.md
+- how_to_run.docx
 - rosatom_map.sql
 - rosatom.cities.sql
 - 404 Sleep Not Found.pdf
