@@ -19,6 +19,7 @@
 ## Структура проекта
 
 - img/
+  - ...
 
 - js/
   - gigascript.js
@@ -26,6 +27,7 @@
 
 - php/
   - admin_ajax.php
+  - admin_nko_ajax.php
   - auth.php,
   - create_card.php
   - db.php
@@ -33,7 +35,9 @@
   - exit.php
   - functions.php
   - get_cards_ajax.php
+  - get_cities.php
   - get_nko.php
+  - get_nko_details.php
   - get_profile.php
   - get_project_page.php
   - get_stats.php
@@ -47,13 +51,17 @@
   - gigamain.css
   - map.css
 
+- uploads/
+  - logos/
+    - ...
+
 - index.php
+- rosatom_map.sql
+- rosatom.cities.sql
 - README.md
 - REQUIREMENTS.md
 - how_to_run.docx
-- rosatom_map.sql
-- rosatom.cities.sql
-- 404 Sleep Not Found.pdf
+- 404 Sleep Not Found для mvp.pdf
 
 ---
 
