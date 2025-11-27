@@ -26,7 +26,7 @@
 - php/
   - admin_ajax.php
   - admin_nko_ajax.php
-  - auth.php,
+  - auth.php
   - create_card.php
   - db.php
   - delete_card.php
