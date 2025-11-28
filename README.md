@@ -240,6 +240,7 @@ chmod -R 755 uploads/
 - [Документация по требованиям](./REQUIREMENTS.md)
 - [Как был запущен проект](./how_to_run.docx)
 - [Презентация MVP](./404%20Sleep%20Not%20Found%20для%20mvp.pdf)
+- [Проведенные тесты](./TESTS.md)
 
 ---
 
