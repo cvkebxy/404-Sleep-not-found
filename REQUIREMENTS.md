@@ -452,6 +452,14 @@ chmod -R 755 logs/
 
 ### 3. Автоматическая настройка БД
 
+В файле `php/db.php` необходимо заменить первые строки на:
+
+```php
+$host = 'localhost';
+$user = 'root';
+$pass = 'strong_root_password_123';
+$db_name = 'rosatom_map';
+```
 При первом запуске `php/db.php` автоматически:
 - ✅ Создаст таблицы (users, cards, nko_organizations, roles и др.)
 - ✅ Создаст пользователя admin (логин: admin, пароль: 123456)
