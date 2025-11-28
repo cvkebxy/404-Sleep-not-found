@@ -421,25 +421,26 @@ class RosatomMap {
         return fullDescription.substring(0, 120).trim() + (fullDescription.length > 120 ? '...' : '');
     }
 
-    // Создание шаблона балуна
+    // Создание шаблона балуна с кнопкой закрытия
     createBalloonTemplate() {
         return ymaps.templateLayoutFactory.createClass(
             `
             <div class="custom-balloon">
+                <button class="custom-close" data-action="close">×</button>
                 <div class="balloon-title-top">$[properties.name]</div>
-                
+
                 <div class="horizontal-line"></div>
-                
+
                 <div class="balloon-content">
                     <div class="balloon-type">$[properties.type]</div>
-                    
+
                     $[if properties.city]
                         <div class="balloon-city">$[properties.city]</div>
                     $[endif]
-                    
+
                     <div class="balloon-description">$[properties.shortDescription]</div>
                 </div>
-                
+
                 <div class="balloon-footer">
                     <button class="details-button" data-id="$[properties.id]">Подробнее</button>
                 </div>
@@ -449,19 +450,29 @@ class RosatomMap {
                 build: function () {
                     this.constructor.superclass.build.call(this);
 
+                    // Обработчик кнопки закрытия
+                    const closeButton = this.getParentElement().querySelector('.custom-close');
+                    if (closeButton) {
+                        closeButton.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.rosatomMap.objectManager.objects.balloon.close();
+                        });
+                    }
+
                     // Обработчик кнопки "Подробнее"
                     const detailsButton = this.getParentElement().querySelector('.details-button');
                     const dataId = detailsButton ? detailsButton.getAttribute('data-id') : null;
-                    
+
                     if (detailsButton && dataId) {
                         detailsButton.addEventListener('click', () => {
                             const feature = window.rosatomMap.objectManager.objects.getById(dataId);
-                            
+
                             if (!feature) {
                                 console.error(`Объект с ID ${dataId} не найден в ObjectManager.`);
                                 return;
                             }
-                            
+
                             window.rosatomMap.openDetailsModal(feature.properties);
                         });
                     }
@@ -841,8 +852,7 @@ class RosatomMap {
             console.error('Ошибка центрирования карты:', error);
         }
     }
-
-    // Вспомогательный метод для определения иконки
+// Вспомогательный метод для определения иконки
     getPresetForType(city) {
         if (city.object_type === 'city') {
             return this.typePresets["Город присутствия ГК Росатом"];
@@ -915,6 +925,7 @@ class RosatomMap {
         const fullscreenBtn = document.querySelector('.map-fullscreen-btn');
 
         mapSection.classList.add('fullscreen');
+        document.body.classList.add('map-fullscreen-active');
 
         if (fullscreenBtn) {
             fullscreenBtn.innerHTML = `
@@ -929,7 +940,6 @@ class RosatomMap {
         setTimeout(() => {
             if (this.map) {
                 this.map.container.fitToViewport();
-                this.centerMapOnObjects();
             }
         }, 100);
 
@@ -943,6 +953,7 @@ class RosatomMap {
         const fullscreenBtn = document.querySelector('.map-fullscreen-btn');
 
         mapSection.classList.remove('fullscreen');
+        document.body.classList.remove('map-fullscreen-active');
 
         if (fullscreenBtn) {
             fullscreenBtn.innerHTML = `
@@ -962,7 +973,7 @@ class RosatomMap {
                 this.map.container.fitToViewport();
             }
         }, 100);
-    }  
+    }
 }
 
 // Глобальный экземпляр карты
