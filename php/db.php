@@ -2,7 +2,7 @@
 // Настройки подключения к базе данных
 $host = 'localhost';
 $user = 'root';
-$pass = '';
+$pass = 'strong_root_password_123';
 $db_name = 'rosatom_map';
 
 // Подключаемся к базе данных

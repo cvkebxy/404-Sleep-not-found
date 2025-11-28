@@ -3853,7 +3853,7 @@ html.accessibility-dark .toast-description {
 /* Стили для кнопки смены пароля */
 .change-password-btn {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #15256D 0%, #4495D1 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -3868,7 +3868,7 @@ html.accessibility-dark .toast-description {
 }
 
 .change-password-btn:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    background: linear-gradient(135deg, #15256D 0%, #4495D1 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
