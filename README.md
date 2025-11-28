@@ -79,7 +79,7 @@ mysqli (или PDO_MYSQL) | json | mbstring | openssl | fileinfo | curl | gd/ima
 ### 1️⃣ Клонирование репозитория
 
 ```bash
-git clone https://github.com/cvkebxy/404-Sleep-not-found. git
+git clone https://github.com/cvkebxy/404-Sleep-not-found.git
 cd 404-Sleep-not-found
 ```
 
@@ -209,9 +209,9 @@ php -S localhost:8000
 |-------|----------|---------|
 | `GET` | `/php/get_cards_ajax.php` | Получить все проекты |
 | `POST` | `/php/create_card.php` | Создать новый проект |
-| `GET` | `/php/get_nko. php` | Получить НКО по ID |
+| `GET` | `/php/get_nko.php` | Получить НКО по ID |
 | `POST` | `/php/admin_nko_ajax.php` | Управление НКО (админ) |
-| `POST` | `/php/auth. php` | Аутентификация пользователя |
+| `POST` | `/php/auth.php` | Аутентификация пользователя |
 | `GET` | `/php/get_stats.php` | Получить статистику |
 
 ### Переменные окружения
