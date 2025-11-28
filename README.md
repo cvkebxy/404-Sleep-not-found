@@ -4,7 +4,6 @@
 
 **Интерактивная карта добрых дел и НКО**
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?logo=php&logoColor=white)](https://www.php.net/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -271,12 +270,6 @@ chmod -R 755 uploads/
 - [Документация по требованиям](./REQUIREMENTS.md)
 - [Как запустить проект](./how_to_run.docx)
 - [Презентация MVP](./404%20Sleep%20Not%20Found%20для%20mvp.pdf)
-
----
-
-## 📝 Лицензия
-
-Этот проект лицензирован под [MIT License](LICENSE) — свободен для использования и модификации.
 
 ---
 
