@@ -60,11 +60,6 @@
 - **Веб-сервер:** nginx + php-fpm (рекомендуется) или Apache
 - **База данных:** MySQL 8.0 / MariaDB 10.5+
 
-### Расширения PHP
-```
-mysqli (или PDO_MYSQL) | json | mbstring | openssl | fileinfo | curl | gd/imagick
-```
-
 ### Клиентские библиотеки
 - **Yandex.Maps JavaScript API v2.1**
 - **PapaParse** (для работы с CSV)
