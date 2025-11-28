@@ -150,9 +150,9 @@ php -S localhost:8000
 ├── 📊 rosatom_map.sql
 │
 ├── 📂 php/
-|   ├── 📂 phpmailer/
-|   │   ├── PHPMailer.php
-|   │   ├── SMTP.php
+│   ├── 📂 phpmailer/
+│   │   ├── PHPMailer.php
+│   │   ├── SMTP.php
 │   │   └── Exception.php
 │   │
 │   ├── admin_ajax.php
@@ -161,7 +161,7 @@ php -S localhost:8000
 │   ├── check_session.php
 │   ├── checkPassword.php
 │   ├── create_card.php
-│   ├── db. php
+│   ├── db.php
 │   ├── delete_card.php
 │   ├── exit.php
 │   ├── functions.php
