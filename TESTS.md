@@ -392,3 +392,9 @@ ab -n 1000 -c 50 http://your-domain.com/
 Таким образом наш сервер показывает производительность производственного уровня.
 
 ---
+
+<div align="center">
+
+**Made with ❤️ by Team 404: Sleep Not Found**
+
+</div>
