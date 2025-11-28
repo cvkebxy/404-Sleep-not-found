@@ -400,6 +400,18 @@ sudo systemctl restart mysql
 
 **Настройка SMTP:** См. `php/register.php` и `php/recover_password.php`
 
+Чтобы изменить почту на свою в файле register.php 161-167 строки и в файле recover_password.php 116-122 строки заменить данную часть на свою рабочую почту. Пароль можно создать в сервисе яндекс почты, когда вы авторизованы в свой аккаунт, нажав кнопку настрйки -> безопасность -> пароли приложений - > почта
+
+```
+// ЗАМЕНИТЕ НА ВАШИ НАСТРОЙКИ ПОЧТЫ
+            $mail->Host       = 'smtp.yandex.com'; // SMTP сервер
+            $mail->Username   = 'rohanudzumaki@yandex.ru'; // Логин почты
+            $mail->Password   = 'wjzuvxdrgxpoloda'; // Пароль почты
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port       = 465;
+            $mail->setFrom('rohanudzumaki@yandex.ru', 'КАРТА ДОБРЫХ ДЕЛ РОСАТОМА'); // От кого
+```
+
 ---
 
 ## ⚙️ Настройка окружения
@@ -472,17 +484,7 @@ $db_name = 'rosatom_map';
 
 ### 4. Настройка почты
 
-В файле register.php 161-167 строки и в файле recover_password.php 116-122 строки заменить данную часть на свою рабочую почту. Пароль можно создать в сервисе яндекс почты, когда вы авторизованы в свой аккаунт, нажав кнопку настрйки -> безопасность -> пароли приложений - > почта
 
-```
-// ЗАМЕНИТЕ НА ВАШИ НАСТРОЙКИ ПОЧТЫ
-            $mail->Host       = 'smtp.yandex.com'; // SMTP сервер
-            $mail->Username   = 'rohanudzumaki@yandex.ru'; // Логин почты
-            $mail->Password   = 'wjzuvxdrgxpoloda'; // Пароль почты
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port       = 465;
-            $mail->setFrom('rohanudzumaki@yandex.ru', 'КАРТА ДОБРЫХ ДЕЛ РОСАТОМА'); // От кого
-```
 
 ---
 
