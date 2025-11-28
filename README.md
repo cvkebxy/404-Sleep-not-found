@@ -303,7 +303,4 @@ chmod -R 755 uploads/
 
 **Made with ❤️ by Team 404: Sleep Not Found**
 
-⭐ Если проект вам понравился, поставьте звезду! 
-
 </div>
-````
