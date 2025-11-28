@@ -149,9 +149,9 @@ php -S localhost:8000
 |
 ├── 📂 php/
 |   ├── 📂 phpmailer/
-|       ├── PHPMailer.php
-|       ├── SMTP.php
-│       └── Exception.php
+|   |   ├── PHPMailer.php
+|   |   ├── SMTP.php
+│   |   └── Exception.php
 │   ├── admin_ajax.php
 │   ├── admin_nko_ajax.php
 │   ├── auth.php
