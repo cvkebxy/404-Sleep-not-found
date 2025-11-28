@@ -192,7 +192,7 @@ php -S localhost:8000
 │
 ├── 📂 uploads/logos/
 │
-└── 📄 README.md, REQUIREMENTS.md
+└── 📄 README.md, REQUIREMENTS.md, TESTS.md
 ```
 
 ---
